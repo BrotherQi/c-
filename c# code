@@ -1,0 +1,46 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace deleteok1
+{
+    public partial class Form1 : Form
+    {
+        string text = "";
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void convert_Click(object sender, EventArgs e)
+        {
+            text = text1.Text;
+            text = text.Replace('\r', ' ');
+            text1.Text = text.Replace('\n', ' ');
+        }
+
+        private void copy_Click(object sender, EventArgs e)
+        {
+            text = text1.Text;
+            text = text.Replace('\r', ' ');
+            text1.Text = text.Replace('\n', ' ');
+            System.Windows.Forms.Clipboard.SetText(text1.Text);
+        }
+
+        private void clear_Click(object sender, EventArgs e)
+        {
+            text1.Text = "";
+        }
+    }
+}
